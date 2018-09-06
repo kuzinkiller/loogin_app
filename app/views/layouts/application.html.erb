@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LooginApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track'=> true %>
+    <%= stylesheet_link_tag 'users' %>
+    <%= stylesheet_link_tag 'sessions' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+
+  <body id="LoginForm">
+  <div class="container">
+    <section class="content" style="min-height: auto;">
+      <% flash.each do |key, value| %>
+          <div class="row">
+            <div class="alert alert-<%= key %>">
+              <%= value %>
+            </div>
+          </div>
+      <% end %>
+    </section>
+    <%= yield %>
+  </div>
+  </body>
+</html>
